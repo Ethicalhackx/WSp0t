@@ -1,5 +1,5 @@
 # WSp0t
-A simple tool that creates and starts your hotspot without worries! 
+A tool that creates and starts your hotspot without worries! 
 
 # Installation
 ```
