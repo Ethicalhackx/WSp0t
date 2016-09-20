@@ -1,0 +1,11 @@
+#!/bin/bash
+
+########################################
+# Author: Biprodeep Roy(v!rtu4lGh0st)  #
+#                                      #
+# Build: WSp0t v1.0                    #
+#                                      #
+########################################
+
+nohup create_ap `ls /sys/class/net | grep 'w'` `ls /sys/class/net | grep 'e'` WSp0t admin123 > my.log 2>&1&
+ echo "$!" > /tmp/wspot.pid

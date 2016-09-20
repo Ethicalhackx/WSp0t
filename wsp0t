@@ -1,0 +1,122 @@
+#!/bin/bash
+
+########################################
+# Author: Biprodeep Roy(v!rtu4lGh0st)  #
+#                                      #
+# Build: WSp0t v1.0                    #
+#                                      #
+########################################
+
+
+R='\033[1;31m'
+B='\033[1;34m'
+Y='\033[1;33m'
+G='\033[1;32m'
+C='\033[1;36m'
+N='\033[0m' # No Color
+
+echo -e " ${Y}
+          ${G}000000000000000000000000000000000000000000000000000000000000000000000000000000000000${N}${Y}
+          ${G}00 *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!* 00 *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*00${N}${Y}
+          ${G}00 @!${N}${Y}  WW                       WW      !@                                        ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}   WW ${R}(0)             (0)${N}${Y} WW        !@      SSSSSS         ooooooo  TTTTTTT  ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}    WW         M         WW          !@     SS      pp     oo   oo  T  T  T  ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}     WW       WWW       WW ***********!@    SS      pppp   oo   oo     T     ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}      WW     WW WW     WW ************!@    SSSSSS  p  pp  oo${R}(*)${N}${Y}oo     T     ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}       WW   WW   WW   WW             !@         SS  p   p  oo   oo     T     ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}        WW WW     WW WW             !@          SS  p pp   oo   oo     T     ${G}00${N}${Y}
+          ${G}00 @!${N}${Y}         WWW       WWW            !@        SSSSSS  pp     ooooooo     T     ${G}00${N}${Y}
+          ${G}00 *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!* 00 *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*00${N}${Y}
+          ${G}000000000000000000000000000000000000000000000000000000000000000000000000000000000000${N}${Y}
+                                                                   pp
+                                                               pppppp    
+              ${B}For those who wants an easy Hotspot!${N}${Y}             ppp 
+                                                               pp  [[[[---> ${C}By V!rtu4lGh0st${N}${Y} <---]]]]
+                                                               p ${N}        ~~(${C}Biprodeep Roy${N})~~
+                                                                                      
+"
+
+  printf "\e[1;1m\t\t\t\t\t\t%s\e[0m\n" " "
+  echo -e "${Y}   [${G}+${Y}]Starting Hotspot: Please Wait...${N}\n"
+  sleep 5
+  clear
+
+
+
+
+main_menu()
+{
+  echo ""
+  echo ""
+  echo ""
+  echo -e "\t\n"
+  echo -e "\t\e[1;5m~~~>WSp0T<~~~\n\e[0m"
+  echo -e "\t\n"
+ #{*}Please note that default(if you haven't changed your credentials already) SSID:wSp0t Password:admin123
+  
+  echo -e "\t${Y}1. Turn on Wifi-Hotspot.${N}\n"
+  echo -e "\t${Y}2. Turn off Wifi-Hostspot.${N}\n"
+  echo -e "\t${Y}3. Change Credentials.${N}\n"
+  echo -e "\t${Y}4. Exit.${N}\n"  
+  echo -e "\t\n"
+  read -p "        [+] Your Choice: " ch
+  
+
+
+
+case "$ch" in
+
+
+1)   
+       sudo ./wooo
+	   echo ""
+	   echo ""
+	   echo ""
+       echo -e "${Y}       [${G}+${Y}]Hotspot Started!${N}\n"
+
+       main_menu 
+
+
+       ;;
+
+
+2) 
+     sudo killall create_ap
+	 echo ""
+	 echo ""
+	 echo ""
+     echo -e "${Y}         [${G}+${Y}]Hotspot Stopped!${N}";
+    
+	 main_menu
+     
+	 ;; 
+
+3)  
+    echo -e "${Y}   [${G}+${Y}]Change your credentials:--!${N}"
+    echo -e ""
+    read -p "    |------> Enter your SSID or Hotspot Name: " S
+    echo -e ""
+    read -p "    |------> Enter your Hotspot password : " P
+    echo -e ""
+    sed -i "/nohup/c\nohup create_ap `ls /sys/class/net | grep 'w'` `ls /sys/class/net | grep 'e'` $S $P > my.log 2>&1&" w
+	chmod +x w
+    echo -e "${Y}   [${G}+${Y}]Credentials successfully changed!${N}"
+    echo -e ""
+    main_menu
+    ;;
+
+4)
+	echo -e "\t\n"
+	echo -e "\t\n"
+    echo -e "${Y}         [${G}+${Y}]Bye buddy!! :) Have fun! :D  ${N}"
+    sleep 2
+    clear
+    ;;
+
+*) echo -e "${Y}       [${G}+${Y}]That was an invalid choice. Try again! :P${N}"
+   main_menu
+   ;;
+
+esac
+}
+main_menu
