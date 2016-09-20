@@ -1,6 +1,8 @@
 # WSp0t
 A tool that creates and starts your hotspot without worries! 
 
+![Alt text](http://i68.tinypic.com/2dj734i.jpg "Screenshot")
+
 # Installation
 ```
 git clone https://github.com/Biprodeep/WSp0t
